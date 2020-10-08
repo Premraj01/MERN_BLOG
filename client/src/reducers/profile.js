@@ -5,7 +5,6 @@ import {
   GET_PROFILES,
   PROFILE_ERROR,
   CLEAR_PROFILE,
-  UPDATE_LIKES,
 } from "../actions/types";
 
 /** @format */

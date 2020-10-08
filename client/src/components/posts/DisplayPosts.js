@@ -1,11 +1,11 @@
 /** @format */
 
 import React, { Fragment, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
-import Moment from "react-moment";
+
 import FrontPosts from "./FrontPosts";
 import { getPosts } from "../../actions/post";
 

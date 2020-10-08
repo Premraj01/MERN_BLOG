@@ -13,7 +13,7 @@ import { getPost } from "../../actions/post";
 const Post = ({ getPost, isAuthenticated, post: { post, loading }, match }) => {
   useEffect(() => {
     getPost(match.params.id);
-  }, [getPost]);
+  }, [getPost, match]);
   return loading || post === null ? (
     <Spinner />
   ) : (

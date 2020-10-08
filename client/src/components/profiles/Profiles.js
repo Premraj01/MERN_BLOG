@@ -1,15 +1,15 @@
 /** @format */
 
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import Spinner from "../layout/Spinner";
+
 import { connect } from "react-redux";
 import { getProfiles } from "../../actions/profile";
 
 const Profiles = ({ getProfiles, profile: { profile, loading } }) => {
   useEffect(() => {
     getProfiles();
-  }, []);
+  }, [getProfiles]);
   return <div>Users Heree</div>;
 };
 

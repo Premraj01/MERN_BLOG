@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import DashboardActions from "./DashboardActions";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
-import Spinner from "../layout/Spinner";
 
 const Dashboard = ({
   getCurrentProfile,
@@ -16,7 +15,7 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
   return (
     <Fragment>
       <h1 className='large text-primary'>Dashboard</h1>
