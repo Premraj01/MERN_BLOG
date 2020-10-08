@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://Premraj:premraj12@devconnector.u9h3f.mongodb.net/siteDB?retryWrites=true&w=majority",
+  "jwtSecret": "Itsasecret",
+  "githubClientId": "4930615ad3878ea4a148",
+  "githubSecret": "8a890c8272843608e799b22e23e3d432ddc8a8bb"
+}
