@@ -22,5 +22,6 @@ export const POST_ERROR = "POST_ERROR ";
 export const ADD_POST = "ADD_POST ";
 export const ADD_COMMENT = "ADD_COMMENT ";
 export const REMOVE_COMMENT = "REMOVE_COMMENT ";
-export const UPDATE_LIKES = "UPDATE_LIKES ";
+export const ADD_LIKES = "UPDATE_LIKES ";
+export const ADD_DISLIKES = "UPDATE_LIKES ";
 export const UPDATE_PROFILE = "UPDATE_PROFILE ";

@@ -4,7 +4,8 @@ import {
   GET_POSTS,
   POST_ERROR,
   ADD_POST,
-  UPDATE_LIKES,
+  ADD_LIKES,
+  ADD_DISLIKES,
   DELETE_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
@@ -69,11 +70,22 @@ export default function (state = initialState, action) {
         loading: false,
       };
 
-    case UPDATE_LIKES:
+    case ADD_LIKES:
       return {
         ...state,
         posts: state.posts.map((post) =>
           post._id === payload.id ? { ...post, likes: payload.likes } : post
+        ),
+        loading: false,
+      };
+
+    case ADD_DISLIKES:
+      return {
+        ...state,
+        posts: state.posts.map((post) =>
+          post._id === payload.id
+            ? { ...post, dislikes: payload.dislikes }
+            : post
         ),
         loading: false,
       };

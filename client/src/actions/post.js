@@ -7,7 +7,8 @@ import {
   POST_ERROR,
   DELETE_ACCOUNT,
   ADD_POST,
-  UPDATE_LIKES,
+  ADD_LIKES,
+  ADD_DISLIKES,
   DELETE_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
@@ -65,7 +66,7 @@ export const addLike = (id) => async (dispatch) => {
     const res = await axios.put(`/api/posts/like/${id}`);
 
     dispatch({
-      type: UPDATE_LIKES,
+      type: ADD_LIKES,
       payload: { id, likes: res.data },
     });
   } catch (err) {
@@ -77,12 +78,12 @@ export const addLike = (id) => async (dispatch) => {
 };
 
 //Remove LIKE
-export const removeLike = (id) => async (dispatch) => {
+export const adddisLike = (id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/unlike/${id}`);
+    const res = await axios.put(`/api/posts/dislike/${id}`);
 
     dispatch({
-      type: UPDATE_LIKES,
+      type: ADD_DISLIKES,
       payload: { id, likes: res.data },
     });
   } catch (err) {

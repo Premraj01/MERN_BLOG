@@ -132,25 +132,22 @@ router.put("/like/:id", auth, async (req, res) => {
 //@route  PUT api/posts/unlike/:id
 //@desc   Unike a post
 //@access Private
-router.put("/unlike/:id", auth, async (req, res) => {
+router.put("/dislike/:id", auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
 
-    //check if the post has already been liked
-    if (post.likes.filter((like) => like.user === req.user.id).length === 0) {
-      return res.status(400).json({ msg: "Post has not been liked" });
+    // Check if the post has already been disliked
+    if (
+      post.dislikes.filter((like) => dislike.user.toString() === req.user.id)
+        .length > 0
+    ) {
+      return res.status(400).json({ msg: "Post already disliked" });
     }
 
-    // Get remove Index
-    const removeIndex = post.likes
-      .map((like) => like.user.toString())
-      .indexof(req.user.id);
-
-    post.likes.splice(removeIndex, 1);
+    post.dislikes.unshift({ user: req.user.id });
 
     await post.save();
-
-    return res.json(post.likes);
+    res.json(post.dislikes);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
